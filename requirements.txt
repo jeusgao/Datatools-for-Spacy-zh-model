@@ -1,0 +1,6 @@
+pandas
+numpy
+spacy
+textacy
+excelcy
+jieba
