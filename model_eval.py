@@ -10,7 +10,7 @@ import os
 
 @plac.annotations(
     model=("Model name. Defaults to blank 'zh_model'.", "option", "m", str),
-    train_data=("Train data pickle file-name with path", "option", "t", str)
+    train_data=("Test data pickle file-name with path", "option", "t", str)
 )
 def main(model='zh_model', train_data=None):
     """Load the model, set up the pipeline and train the entity recognizer."""
