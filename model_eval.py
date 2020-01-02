@@ -35,11 +35,10 @@ def main(model='zh_model', train_data=None):
             if l1 != l2:
                 print('Results: ', l1)
                 print('Correct: ', l2, '\n----------\n')
-                fw.write('Results: ' + str(l1) + '\n' +
-                         'Correct: ' + str(l2) + '\n----------\n')
+                fw.write(f'Results: {l1}\nCorrect: {l2}\n{"-"*10}\n')
             count += len(list(set(l1).intersection(set(l2))))
-        fw.write('Precision: ' + str(count) + ' / ' + str(TRAIN_DATA[0]))
-        print('Precision: ', count, ' / ', TRAIN_DATA[0])
+        fw.write(f'Precision: {count} / {TRAIN_DATA[0]}')
+        print(f'Precision: {count} / {TRAIN_DATA[0]}')
 
 if __name__ == '__main__':
     st = time.time()
