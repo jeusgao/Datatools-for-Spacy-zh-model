@@ -5,4 +5,3 @@ with open('SogouR.txt', 'rb') as fr:
 
 with open('wrds_grp.txt', 'w') as fw:
     fw.write(ol)
-    fw.flush()

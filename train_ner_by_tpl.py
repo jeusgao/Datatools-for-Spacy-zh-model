@@ -68,12 +68,9 @@ def main(model='zh_model', output_dir='zh_model/', n_iter=50, train_data=None):
                     sgd=optimizer,  # callable to update weights
                     losses=losses)
             rd_ed = time.time()
-            print('No. ', i, ': ', losses, ' Cost: ',
-                  '%.2f' % (rd_ed - rd_st), ' secs...')
+            print('No. ', i, ': ', losses, ' Cost: ', '%.2f' % (rd_ed - rd_st), ' secs...')
 
     print("Test the trained model...")
-    # test the trained model
-    # for text, _ in TRAIN_DATA:
     test_text = "查看明天的日程"
     doc = nlp(test_text)
     print('Entities', [(ent.text, ent.label_) for ent in doc.ents])

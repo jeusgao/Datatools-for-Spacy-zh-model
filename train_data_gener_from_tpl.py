@@ -30,7 +30,6 @@ def loadvocabs(src_dir):
 
     with open('dict.txt', 'a+') as fw:
         fw.writelines(v + ' 100000\n' for v in vocabs)
-        fw.flush()
     return d_slots, d_sl
 
 
@@ -127,8 +126,7 @@ def main(template=None, output_dir='model', lines=None, src_dir='ref'):
     with open(fname, 'wb') as fw:
         pickle.dump(TRAIN_DATA, fw)
 
-    fname = os.path.join(output_dir, 'train_data_' + str(time.strftime(
-        '%Y%m%d_%H%M', time.localtime())) + '.json')
+    fname = os.path.join(output_dir, 'train_data_{}.json'.format(time.strftime('%Y%m%d_%H%M', time.localtime())))
     with open(fname, 'w') as fw:
         json.dump(TRAIN_DATA, fw, ensure_ascii=False, indent=2)
 
